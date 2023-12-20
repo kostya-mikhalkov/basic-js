@@ -20,47 +20,52 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 class VigenereCipheringMachine {
-  constructor(meaning = true){
-    this.meaning = meaning;
-    this.alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    this.obj ={};
-  }
+  // constructor(meaning = true){
+  //   this.meaning = meaning;
+  //   this.alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  //   this.obj ={};
+  // }
 
-  tableVigenere(){
-    for(let i = 0; i < this.alphabet.length; i++) {
-      this.obj[this.alphabet[i]] = i;
-    }
-  }
+  // tableVigenere(){
+  //   for(let i = 0; i < this.alphabet.length; i++) {
+  //     this.obj[this.alphabet[i]] = i;
+  //   }
+  // }
   encrypt(message, key) {
-    if(!message || !key) {
-      throw new Error('Incorrect arguments!');
-    }
+    // if(!message || !key) {
+    //   throw new Error('Incorrect arguments!');
+    // }
 
-    message = message.toUpperCase();
-    key = key.toUpperCase();
+    // message = message.toUpperCase();
+    // key = key.toUpperCase();
 
-    this.tableVigenere();
-    let res = '';
-    for(let i = 0; i < message.length; i++) {
-      res += this.alphabet[(this.obj[message[i]] + this.obj[key[i % key.length]]) % this.alphabet.length]
-    }
-    return this.meaning ? res : res.split('').reverse().join('');
+    // this.tableVigenere();
+    // let res = '';
+    // for(let i = 0; i < message.length; i++) {
+    //   res += this.alphabet[(this.obj[message[i]] + this.obj[key[i % key.length]]) % this.alphabet.length]
+    // }
+    // return this.meaning ? res : res.split('').reverse().join('');
+      throw new NotImplementedError('Not implemented');
+  // remove line with error and write your code here
   }
   decrypt(encryptedMessage, key) {
-    if(!encryptedMessage || !key) {
-      throw new Error('Incorrect arguments!');
-    }
-    encryptedMessage = encryptedMessage.toUpperCase();
-    key = key.toUpperCase();
+    // if(!encryptedMessage || !key) {
+    //   throw new Error('Incorrect arguments!');
+    // }
+    // encryptedMessage = encryptedMessage.toUpperCase();
+    // key = key.toUpperCase();
 
-    this.tableVigenere();
-    let res = '';
-    for(let i = 0; i < encryptedMessage.length; i++) {
-      res += this.alphabet[(this.obj[encryptedMessage[i]] - this.obj[key[i % key.length]] + this.alphabet.length) % this.alphabet.length]
-    }
-    return this.meaning ? res : res.split('').reverse().join('');
+    // this.tableVigenere();
+    // let res = '';
+    // for(let i = 0; i < encryptedMessage.length; i++) {
+    //   res += this.alphabet[(this.obj[encryptedMessage[i]] - this.obj[key[i % key.length]] + this.alphabet.length) % this.alphabet.length]
+    // }
+    // return this.meaning ? res : res.split('').reverse().join('');
+      throw new NotImplementedError('Not implemented');
+  // remove line with error and write your code here
   }
 }
+
 
 module.exports = {
   VigenereCipheringMachine
